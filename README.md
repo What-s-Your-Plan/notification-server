@@ -1,6 +1,5 @@
 # Notification Service
 
-
 <img width="800" src="https://raw.githubusercontent.com/What-s-Your-Plan/repository-rule/main/image/logo.png" alt="logo" />
 
 
@@ -20,3 +19,11 @@
 `Redis Pub/Sub`를 사용하여 Server Sent Event를 활용하는 알림 서비스
 
 </div>
+
+## 1. Quick Starter
+
+`Local`환경에서 `Docker`가 필요하지는 않습니다.
+
+```shell
+./gradlew -Dspring.profile.active=local bootRun
+```
