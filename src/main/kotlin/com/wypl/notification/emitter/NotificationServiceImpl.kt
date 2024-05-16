@@ -2,6 +2,7 @@ package com.wypl.notification.emitter
 
 import com.wypl.notification.global.message.NotificationSendable
 import com.wypl.notification.global.message.SubscribeMessage
+import com.wypl.notification.global.service.EmitterSubscribeService
 import io.github.oshai.kotlinlogging.KotlinLogging
 import org.springframework.stereotype.Service
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter
@@ -10,14 +11,14 @@ import java.io.IOException
 private val logger = KotlinLogging.logger {}
 
 @Service
-class NotificationService(
+class NotificationServiceImpl(
     private val sseEmitterRepository: SseEmitterRepository
-) {
+) : EmitterSubscribeService {
     companion object {
         const val TIME_OUT_MILLISECONDS: Long = 60 * 1_000L
     }
 
-    fun subscribe(memberId: Int): SseEmitter {
+    override fun connections(memberId: Int): SseEmitter {
         val sseEmitter = SseEmitter(TIME_OUT_MILLISECONDS)
         sseEmitterRepository.save(memberId, sseEmitter)
 
