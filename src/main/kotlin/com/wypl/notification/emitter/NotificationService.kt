@@ -19,7 +19,7 @@ class NotificationService(
     }
 
     fun subscribe(memberId: Int): SseEmitter {
-        val sseEmitter = SseEmitter(TIME_OUT_MILLISECONDS);
+        val sseEmitter = SseEmitter(TIME_OUT_MILLISECONDS)
         sseEmitterRepository.save(memberId, sseEmitter)
 
         sseEmitterCallback(sseEmitter, memberId)
