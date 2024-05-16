@@ -22,7 +22,7 @@ class NotificationService(
         val sseEmitter = SseEmitter(TIME_OUT_MILLISECONDS);
         sseEmitterRepository.save(memberId, sseEmitter)
 
-        sseEmitterEvent(sseEmitter, memberId)
+        sseEmitterCallback(sseEmitter, memberId)
 
         return sendMessage(
             message = SubscribeMessage(
@@ -34,7 +34,7 @@ class NotificationService(
         )
     }
 
-    private fun sseEmitterEvent(
+    private fun sseEmitterCallback(
         sseEmitter: SseEmitter,
         memberId: Int
     ) {
