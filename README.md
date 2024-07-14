@@ -8,7 +8,7 @@
 ![Kotlin](https://img.shields.io/badge/Kotlin-1.9.23-purple?logo=kotlin)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.2.5-brightgreen?logo=spring)
 ![JVM](https://img.shields.io/badge/JVM-Docker%20image%20amazoncorretto:17--alpine-blue?logo=docker)
-![Redis](https://img.shields.io/badge/Redis-red?logo=redis)
+![Kafka](https://img.shields.io/badge/Apache%20Kafka-000?logo=apachekafka)
 ![Mongodb](https://img.shields.io/badge/MongoDB-black?logo=mongodb)
 
 </div>
@@ -16,7 +16,7 @@
 
 <div align="center">
 
-`Redis Pub/Sub`를 사용하여 Server Sent Event를 활용하는 알림 서비스
+Kafka를 사용하여 Server Sent Event를 활용하는 알림 서비스
 
 </div>
 
