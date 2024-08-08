@@ -1,1 +1,0 @@
-[Kotlin에서 RestTemplateClient를 만들어보자](https://devvkkid.tistory.com/238#toc-RestTemplateClient)
