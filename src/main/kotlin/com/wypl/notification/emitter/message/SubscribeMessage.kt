@@ -3,9 +3,9 @@ package com.wypl.notification.emitter.message
 data class SubscribeMessage(
     private val memberId: Int,
     private val timeout: Long,
-    private val type: MessageType = MessageType.SUBSCRIBE
+    private val type: NotificationMessageType = NotificationMessageType.SUBSCRIBE
 ) : NotificationSendable {
-    override fun getMessageType(): MessageType {
+    override fun getMessageType(): NotificationMessageType {
         return type
     }
 
