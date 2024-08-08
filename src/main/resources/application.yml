@@ -10,12 +10,22 @@ spring:
       on-profile:
         - default
         - local
-  data:
-    redis:
-      port: 6379
-      host: 127.0.0.1
+  kafka:
+    bootstrap-servers: localhost:9092
 de:
   flapdoodle:
     mongodb:
       embedded:
         version: 4.0.2
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile:
+        - prod
+        - dev
+    import:
+      - security/application-kafka.yml
+      - security/application-mongo.yml

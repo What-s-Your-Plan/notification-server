@@ -12,15 +12,15 @@ import org.springframework.kafka.core.ProducerFactory
 
 @EnableKafka
 @Configuration
-class KafkaProducerConfig {
-
+class KafkaProducerConfig(
+    val kafkaProperties: KafkaProperties
+) {
     @Bean
     fun producerFactory(): ProducerFactory<String, String> {
         val properties: MutableMap<String, Any> = HashMap()
-        properties[ProducerConfig.BOOTSTRAP_SERVERS_CONFIG] = "127.0.0.1:9092"  // TODO 수정
+        properties[ProducerConfig.BOOTSTRAP_SERVERS_CONFIG] = this.kafkaProperties.bootstrapServers
         properties[ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG] = StringSerializer::class.java
         properties[ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG] = StringSerializer::class.java
-
         return DefaultKafkaProducerFactory(properties)
     }
 

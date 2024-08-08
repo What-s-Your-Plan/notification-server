@@ -11,12 +11,14 @@ import org.springframework.kafka.core.DefaultKafkaConsumerFactory
 
 @EnableKafka
 @Configuration
-class KafkaConsumerConfig {
+class KafkaConsumerConfig(
+    val kafkaProperties: KafkaProperties
+) {
     @Bean
     fun consumerFactory(): ConsumerFactory<String, Any> {
         val properties: MutableMap<String, Any> = HashMap()
-        properties[ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG] = "127.0.0.1:9092"  // TODO: 수정
-        properties[ConsumerConfig.GROUP_ID_CONFIG] = "wypl-notification-group"  // TODO: 수정
+        properties[ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG] = this.kafkaProperties.bootstrapServers
+        properties[ConsumerConfig.GROUP_ID_CONFIG] = "wypl-notification-group"
         properties[ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG] = StringDeserializer::class.java
         properties[ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG] = StringDeserializer::class.java
         return DefaultKafkaConsumerFactory(properties)
