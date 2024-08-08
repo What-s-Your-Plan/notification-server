@@ -44,3 +44,6 @@ out/
 
 ### Dokcer ###
 /docker/volumes
+
+### Properties ###
+**/main/resources/security/*.yml
