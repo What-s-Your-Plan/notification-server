@@ -28,18 +28,14 @@ dependencies {
     /* Spring Boot */
     implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.springframework.boot:spring-boot-starter-web")
-
-    implementation("com.github.codemonstur:embedded-redis:1.4.3")
     implementation("de.flapdoodle.embed:de.flapdoodle.embed.mongo.spring31x:4.11.0")
 
     /* Database */
     implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
-    implementation("org.springframework.boot:spring-boot-starter-data-redis")
 
     /* Kafka */
     implementation("org.springframework.kafka:spring-kafka")
     testImplementation("org.springframework.kafka:spring-kafka-test:3.2.2")
-
 
     /* Test */
     testImplementation("org.springframework.boot:spring-boot-starter-test")
