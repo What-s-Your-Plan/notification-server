@@ -22,8 +22,10 @@ Kafka를 사용하여 Server Sent Event를 활용하는 알림 서비스
 
 ## 1. Quick Starter
 
-`Local`환경에서 `Docker`가 필요하지는 않습니다.
+> 해당 프로젝트를 실행하기 위해서는 반드시 `Docker`가 필요합니다.
 
 ```shell
-./gradlew -Dspring.profile.active=local bootRun
+#!/bin/bash
+
+sh ./script/quick-starter.sh
 ```
