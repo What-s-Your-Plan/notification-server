@@ -12,9 +12,9 @@ import org.springframework.web.servlet.mvc.method.annotation.SseEmitter
 class NotificationController(
     private val emitterSubscribeService: EmitterSubscribeService
 ) {
-    @PostMapping("/v1/subscribe", produces = [MediaType.TEXT_EVENT_STREAM_VALUE])
+    @PostMapping("/v1/subscribe/{memberId}", produces = [MediaType.TEXT_EVENT_STREAM_VALUE])
     fun subscribe(
-        @RequestParam memberId: Int,
+        @PathVariable memberId: Int,
         @RequestBody requestBody: SubscribeRequest  // TODO: 인터셉터로 JWT 서버에 보내기?, 추후 검증은?
     ): ResponseEntity<SseEmitter> {
         val sseEmitter: SseEmitter = emitterSubscribeService.connections(memberId)
