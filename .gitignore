@@ -41,3 +41,15 @@ out/
 
 ### macOS ###
 .DS_Store
+
+### Dokcer ###
+/docker/volumes
+
+### Properties ###
+**/main/resources/security/*.yml
+
+### API Docs ###
+**/main/resources/static/swagger-ui/*.yaml
+
+### Jacoco ###
+/reports
