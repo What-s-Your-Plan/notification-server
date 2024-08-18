@@ -1,3 +1,3 @@
 package com.wypl.notification.global.kafka
 
-interface KafkaMessage
+open class KafkaConsumerEvent() : KafkaEvent
